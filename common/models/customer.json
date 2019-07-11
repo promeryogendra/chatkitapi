@@ -1,0 +1,17 @@
+{
+  "name": "customer",
+  "plural": "customer",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "emailVerificationRequired": true
+  },
+  "properties": {},
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": true,
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

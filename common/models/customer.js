@@ -96,7 +96,7 @@ module.exports = function(Customer) {
 			port: data_config.port,
       subject: 'Thanks for registering.',
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      redirect: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      redirect: '',
       user: user
     };
 

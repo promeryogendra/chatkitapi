@@ -48,5 +48,17 @@
     "options": {
       "emailVerificationRequired": true
     }
+  },
+  "friends": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "requests": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "messages": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

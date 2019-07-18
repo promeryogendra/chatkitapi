@@ -1,0 +1,37 @@
+{
+  "name": "messages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "senderId": {
+      "type": "string",
+      "required": true
+    },
+    "receiverId": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "Date.now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "friends": {
+      "type": "belongsTo",
+      "model": "friends",
+      "foreignKey": "friendsId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

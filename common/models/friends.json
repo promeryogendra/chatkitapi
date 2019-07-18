@@ -1,0 +1,45 @@
+{
+  "name": "friends",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "user1": {
+      "type": "string",
+      "required": true
+    },
+    "user2": {
+      "type": "string",
+      "required": true
+    },
+    "user1Count": {
+      "type": "number",
+      "required": true
+    },
+    "user1Status": {
+      "type": "string",
+      "required": true
+    },
+    "user2Count": {
+      "type": "number",
+      "required": true
+    },
+    "user2Status": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "messages": {
+      "type": "hasMany",
+      "model": "messages",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

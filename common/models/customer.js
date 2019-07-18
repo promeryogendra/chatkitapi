@@ -7,57 +7,9 @@ let path = require('path');
 
 let senderAddress = data_config.hostmail;
 
-//Testing code
-// function testing(context) {
-//   let Customer = app.models.Customer;
-//   Customer.findOne({where: {username : "yogendra"}}, function(err , user){
-//     if(err){ console.log(error);return err;}
-//     console.log("---",user);
-//     return user;
-//   })
-// }
 
 module.exports = function(Customer) {
-
-  //     Customer.greet = async function(msg) {
-  //       return 'Greetings... ' + msg;
-  //   }
-
-  //   Customer.remoteMethod('greet', {
-  //         accepts: {arg: 'msg', type: 'string'},
-  //         returns: {arg: 'greeting', type: 'string'}
-  //   });
-  // Customer.testing = function(msg, cb) {
-  //   cb(null, 'Greetings....' + msg);
-  // };
-  // Customer.remoteMethod('testing', {
-  //   accepts: {
-  //     arg: 'msg',
-  //     type: 'string',
-  //   },
-  //   returns: {
-  //     arg: 'greeting',
-  //     type: 'string',
-  //   },
-  //   http: {
-  //     path: '/testing',
-  //     verb: 'get',
-  //   },
-  // });
-  // Customer.beforeRemote('testing', (context, modelInstance, next) => {
-  //   // var data = sent(context);
-  //   var data = testing(context);
-  //   setTimeout(() => {
-  //     if (resData.length > 0) {
-  //       context.res.status(200);
-  //       context.res.send(resData);
-  //       next(resData);
-  //     }else {
-  //       context.res.status(204);
-  //       next();
-  //     }
-  //   }, 1000);
-  // });
+	
   //Create error
   function createError(status,msg,code) {
     let error = new Error();

@@ -14,24 +14,34 @@ module.exports = function (app) {
     if(userId && userId !== '')
     {
       var Friends = app.models.Friends;
+      var Requests = app.models.Requests;
       let filters =
         {
           "where":{"or":[{"user1": userId },{"user2": userId}]},
-          "include": { "relation": "messages","scope": { "order":"date DESC" }}
+          "include": { "relation": "messages","scope": { "order":"date DESC" , limit: 1000}}
         }
       Friends.find( filters , function (err, users) {
         if (err) {
           createResponse(res , 500 , "Server having issue..." , "Error" , 500)
           res.send("Server issue...");
         }else if (!users) {
-          createResponse(res , 204 , "Not Authenticated user..." , 'Success' , 204);
+          createResponse(res , 204 , "No Data..." , 'Success' , 204);
           res.send(false);
         } else {
           if(users) {
-            createResponse(res , 200 , "Authenticated user..." , "Success" , 200);
-            res.send(users);
+            Requests.find({where : {"user2" : userId}}, function(err,requests) {
+              if (err) {
+                createResponse(res , 500 , "Server having issue..." , "Error" , 500)
+                res.send("Server issue...");
+              }else if (!requests) {
+                createResponse(res , 200 , "Data exists..." , "Success" , 200);
+                res.send({requests: [] , friends: users});
+              }else {
+                createResponse(res , 200 , "Data exists..." , "Success" , 200);
+                res.send({requests: requests , friends: users});
+              }});
           } else {
-            createResponse(res , 204 , "Not Authenticated user..." , "Success" , 204);
+            createResponse(res , 204 , "No data user..." , "Success" , 204);
             res.send(false);
           }
         }

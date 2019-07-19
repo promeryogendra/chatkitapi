@@ -3,14 +3,31 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
     "user1": {
       "type": "string",
       "required": true
     },
+		"user1username": {
+      "type": "string",
+      "required": true
+    },
+		"user1email": {
+      "type": "string",
+      "required": true
+    },
     "user2": {
+      "type": "string",
+      "required": true
+    },
+		"user2username": {
+      "type": "string",
+      "required": true
+    },
+		"user2email": {
       "type": "string",
       "required": true
     }

@@ -10,7 +10,23 @@
       "type": "string",
       "required": true
     },
+		"senderUsername": {
+      "type": "string",
+      "required": true
+    },
+		"senderEmail": {
+      "type": "string",
+      "required": true
+    },
     "receiverId": {
+      "type": "string",
+      "required": true
+    },
+		"receiverUsername": {
+      "type": "string",
+      "required": true
+    },
+		"receiverEmail": {
       "type": "string",
       "required": true
     },

@@ -25,7 +25,6 @@ module.exports = function (app) {
           res.send(false);
         } else {
           Customer.find({where: {id:accessToken.userId}}, function (err, users) {
-
             if (err) {
               createResponse(res , 500 , "Server having issue..." , "Error" , 500)
               res.send("Server issue...");
